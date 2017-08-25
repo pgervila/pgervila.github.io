@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>CONTRASUBERNA</title><link href="https://pgervila.github.io/" rel="alternate"></link><link href="https://pgervila.github.io/feeds/all.atom.xml" rel="self"></link><id>https://pgervila.github.io/</id><updated>2017-08-24T22:00:00+02:00</updated><entry><title>Exploring real bilingualism trends in cities via social media</title><link href="https://pgervila.github.io/first-post.html" rel="alternate"></link><published>2017-08-24T22:00:00+02:00</published><updated>2017-08-24T22:00:00+02:00</updated><author><name>Paolo Gervasoni</name></author><id>tag:pgervila.github.io,2017-08-24:first-post.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>CONTRASUBERNA</title><link href="https://pgervila.github.io/" rel="alternate"></link><link href="https://pgervila.github.io/feeds/all.atom.xml" rel="self"></link><id>https://pgervila.github.io/</id><updated>2017-08-24T22:00:00+02:00</updated><entry><title>Exploring real bilingualism trends in cities via social media</title><link href="https://pgervila.github.io/first-post.html" rel="alternate"></link><published>2017-08-24T22:00:00+02:00</published><updated>2017-08-24T22:00:00+02:00</updated><author><name>Paolo Gervasoni</name></author><id>tag:pgervila.github.io,2017-08-24:/first-post.html</id><summary type="html">&lt;p&gt;Twitter to explore lang use&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -5039,4 +5039,4 @@ Total time elapsed: 00:00:06
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category><category term="bilingualism"></category><category term="Twitter"></category></entry></feed>
+</content><category term="python"></category><category term="bilingualism"></category><category term="Twitter"></category></entry></feed>
