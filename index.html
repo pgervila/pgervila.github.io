@@ -1,1226 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>CONTRASUBERNA</title>
-        <link rel="stylesheet" href="https://pgervila.github.io/theme/css/main.css" />
-        <link href="https://pgervila.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="CONTRASUBERNA Atom Feed" />
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+	<meta charset="utf-8">
+	<title>CONTRASUBERNA</title>
+	<meta name="description" content="Coding, scientific development, finance, data analysis, visualization, statistics, and machine learning">
+	<meta name="author" content="Paolo Gervasoni">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+		<![endif]-->
+	<link href="/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://pgervila.github.io/">CONTRASUBERNA </a></h1>
-                <nav><ul>
-                    <li><a href="https://pgervila.github.io/category/posts.html">posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://pgervila.github.io/first-post.html">Exploring language choice in Barcelona through Twitter</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-06-25T13:00:00+02:00">
-                Published: Mon 25 June 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://pgervila.github.io/author/paolo-gervasoni.html">Paolo Gervasoni</a>
-        </address>
-<p>In <a href="https://pgervila.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="https://pgervila.github.io/tag/python.html">python</a> <a href="https://pgervila.github.io/tag/bilingualism.html">bilingualism</a> <a href="https://pgervila.github.io/tag/barcelona.html">Barcelona</a> </p>
-</footer><!-- /.post-info --><style type="text/css">/*!
-*
-* IPython notebook
-*
-*/
-/* CSS font colors for translated ANSI colors. */
-.ansibold {
-  font-weight: bold;
-}
-/* use dark versions for foreground, to improve visibility */
-.ansiblack {
-  color: black;
-}
-.ansired {
-  color: darkred;
-}
-.ansigreen {
-  color: darkgreen;
-}
-.ansiyellow {
-  color: #c4a000;
-}
-.ansiblue {
-  color: darkblue;
-}
-.ansipurple {
-  color: darkviolet;
-}
-.ansicyan {
-  color: steelblue;
-}
-.ansigray {
-  color: gray;
-}
-/* and light for background, for the same reason */
-.ansibgblack {
-  background-color: black;
-}
-.ansibgred {
-  background-color: red;
-}
-.ansibggreen {
-  background-color: green;
-}
-.ansibgyellow {
-  background-color: yellow;
-}
-.ansibgblue {
-  background-color: blue;
-}
-.ansibgpurple {
-  background-color: magenta;
-}
-.ansibgcyan {
-  background-color: cyan;
-}
-.ansibggray {
-  background-color: gray;
-}
-div.cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border-radius: 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  width: 100%;
-  padding: 5px;
-  /* This acts as a spacer between cells, that is outside the border */
-  margin: 0px;
-  outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
-}
-div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
-  border-left-color: #E3F2FD;
-  border-left-width: 1px;
-  padding-left: 5px;
-  border-right-color: #E3F2FD;
-  border-right-width: 1px;
-  background: #E3F2FD;
-}
-@media print {
-  div.cell.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-div.cell.selected {
-  border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
-}
-@media print {
-  div.cell.selected {
-    border-color: transparent;
-  }
-}
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
-.edit_mode div.cell.selected {
-  border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
-}
-@media print {
-  .edit_mode div.cell.selected {
-    border-color: transparent;
-  }
-}
-.prompt {
-  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
-  min-width: 14ex;
-  /* This padding is tuned to match the padding on the CodeMirror editor. */
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace;
-  text-align: right;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-  /* Don't highlight prompt number selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Use default cursor */
-  cursor: default;
-}
-@media (max-width: 540px) {
-  .prompt {
-    text-align: left;
-  }
-}
-div.inner_cell {
-  min-width: 0;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_area {
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: #f7f7f7;
-  line-height: 1.21429em;
-}
-/* This is needed so that empty prompt areas can collapse to zero height when there
-   is no content in the output_subarea and the prompt. The main purpose of this is
-   to make sure that empty JavaScript output_subareas have no height. */
-div.prompt:empty {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-div.unrecognized_cell {
-  padding: 5px 5px 5px 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.unrecognized_cell .inner_cell {
-  border-radius: 2px;
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-  border: 1px solid #cfcfcf;
-  background: #eaeaea;
-}
-div.unrecognized_cell .inner_cell a {
-  color: inherit;
-  text-decoration: none;
-}
-div.unrecognized_cell .inner_cell a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-@media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
-    display: none;
-  }
-}
-div.code_cell {
-  /* avoid page breaking on code cells when printing */
-}
-@media print {
-  div.code_cell {
-    page-break-inside: avoid;
-  }
-}
-/* any special styling for code cells that are currently running goes here */
-div.input {
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.input {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_prompt {
-  color: #303F9F;
-  border-top: 1px solid transparent;
-}
-div.input_area > div.highlight {
-  margin: 0.4em;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-div.input_area > div.highlight > pre {
-  margin: 0px;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-/* The following gets added to the <head> if it is detected that the user has a
- * monospace font with inconsistent normal/bold/italic height.  See
- * notebookmain.js.  Such fonts will have keywords vertically offset with
- * respect to the rest of the text.  The user should select a better font.
- * See: https://github.com/ipython/ipython/issues/1503
- *
- * .CodeMirror span {
- *      vertical-align: bottom;
- * }
- */
-.CodeMirror {
-  line-height: 1.21429em;
-  /* Changed from 1em to our global default */
-  font-size: 14px;
-  height: auto;
-  /* Changed to auto to autogrow */
-  background: none;
-  /* Changed from white to allow our bg to show through */
-}
-.CodeMirror-scroll {
-  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
-  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-.CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
-  /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
-}
-.CodeMirror-linenumber {
-  padding: 0 8px 0 4px;
-}
-.CodeMirror-gutters {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-}
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-Adapted from GitHub theme
-
-*/
-.highlight-base {
-  color: #000;
-}
-.highlight-variable {
-  color: #000;
-}
-.highlight-variable-2 {
-  color: #1a1a1a;
-}
-.highlight-variable-3 {
-  color: #333333;
-}
-.highlight-string {
-  color: #BA2121;
-}
-.highlight-comment {
-  color: #408080;
-  font-style: italic;
-}
-.highlight-number {
-  color: #080;
-}
-.highlight-atom {
-  color: #88F;
-}
-.highlight-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.highlight-builtin {
-  color: #008000;
-}
-.highlight-error {
-  color: #f00;
-}
-.highlight-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.highlight-meta {
-  color: #AA22FF;
-}
-/* previously not defined, copying from default codemirror */
-.highlight-def {
-  color: #00f;
-}
-.highlight-string-2 {
-  color: #f50;
-}
-.highlight-qualifier {
-  color: #555;
-}
-.highlight-bracket {
-  color: #997;
-}
-.highlight-tag {
-  color: #170;
-}
-.highlight-attribute {
-  color: #00c;
-}
-.highlight-header {
-  color: blue;
-}
-.highlight-quote {
-  color: #090;
-}
-.highlight-link {
-  color: #00c;
-}
-/* apply the same style to codemirror */
-.cm-s-ipython span.cm-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-atom {
-  color: #88F;
-}
-.cm-s-ipython span.cm-number {
-  color: #080;
-}
-.cm-s-ipython span.cm-def {
-  color: #00f;
-}
-.cm-s-ipython span.cm-variable {
-  color: #000;
-}
-.cm-s-ipython span.cm-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-variable-2 {
-  color: #1a1a1a;
-}
-.cm-s-ipython span.cm-variable-3 {
-  color: #333333;
-}
-.cm-s-ipython span.cm-comment {
-  color: #408080;
-  font-style: italic;
-}
-.cm-s-ipython span.cm-string {
-  color: #BA2121;
-}
-.cm-s-ipython span.cm-string-2 {
-  color: #f50;
-}
-.cm-s-ipython span.cm-meta {
-  color: #AA22FF;
-}
-.cm-s-ipython span.cm-qualifier {
-  color: #555;
-}
-.cm-s-ipython span.cm-builtin {
-  color: #008000;
-}
-.cm-s-ipython span.cm-bracket {
-  color: #997;
-}
-.cm-s-ipython span.cm-tag {
-  color: #170;
-}
-.cm-s-ipython span.cm-attribute {
-  color: #00c;
-}
-.cm-s-ipython span.cm-header {
-  color: blue;
-}
-.cm-s-ipython span.cm-quote {
-  color: #090;
-}
-.cm-s-ipython span.cm-link {
-  color: #00c;
-}
-.cm-s-ipython span.cm-error {
-  color: #f00;
-}
-.cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-div.output_wrapper {
-  /* this position must be relative to enable descendents to be absolute within it */
-  position: relative;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  z-index: 1;
-}
-/* class for the output area when it should be height-limited */
-div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
-  height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
-  width: 100%;
-  overflow: auto;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  display: block;
-}
-/* output div while it is collapsed */
-div.output_collapsed {
-  margin: 0px;
-  padding: 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-div.out_prompt_overlay {
-  height: 100%;
-  padding: 0px 0.4em;
-  position: absolute;
-  border-radius: 2px;
-}
-div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
-  -webkit-box-shadow: inset 0 0 1px #000;
-  box-shadow: inset 0 0 1px #000;
-  background: rgba(240, 240, 240, 0.5);
-}
-div.output_prompt {
-  color: #D84315;
-}
-/* This class is the outer container of all output sections. */
-div.output_area {
-  padding: 0px;
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.output_area .MathJax_Display {
-  text-align: left !important;
-}
-div.output_area 
-div.output_area 
-div.output_area img,
-div.output_area svg {
-  max-width: 100%;
-  height: auto;
-}
-div.output_area img.unconfined,
-div.output_area svg.unconfined {
-  max-width: none;
-}
-/* This is needed to protect the pre formating from global settings such
-   as that of bootstrap */
-.output {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.output_area {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-div.output_area pre {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  color: black;
-  background-color: transparent;
-  border-radius: 0;
-}
-/* This class is for the output subarea inside the output_area and after
-   the prompt div. */
-div.output_subarea {
-  overflow-x: auto;
-  padding: 0.4em;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-  max-width: calc(100% - 14ex);
-}
-div.output_scroll div.output_subarea {
-  overflow-x: visible;
-}
-/* The rest of the output_* classes are for special styling of the different
-   output types */
-/* all text output has this class: */
-div.output_text {
-  text-align: left;
-  color: #000;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-}
-/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
-div.output_stderr {
-  background: #fdd;
-  /* very light red background for stderr */
-}
-div.output_latex {
-  text-align: left;
-}
-/* Empty output_javascript divs should have no height */
-div.output_javascript:empty {
-  padding: 0;
-}
-.js-error {
-  color: darkred;
-}
-/* raw_input styles */
-div.raw_input_container {
-  line-height: 1.21429em;
-  padding-top: 5px;
-}
-pre.raw_input_prompt {
-  /* nothing needed here. */
-}
-input.raw_input {
-  font-family: monospace;
-  font-size: inherit;
-  color: inherit;
-  width: auto;
-  /* make sure input baseline aligns with prompt */
-  vertical-align: baseline;
-  /* padding + margin = 0.5em between prompt and cursor */
-  padding: 0em 0.25em;
-  margin: 0em 0.25em;
-}
-input.raw_input:focus {
-  box-shadow: none;
-}
-p.p-space {
-  margin-bottom: 10px;
-}
-div.output_unrecognized {
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-}
-div.output_unrecognized a {
-  color: inherit;
-  text-decoration: none;
-}
-div.output_unrecognized a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.rendered_html {
-  color: #000;
-  /* any extras will just be numbers: */
-}
-
-
-
-.rendered_html :link {
-  text-decoration: underline;
-}
-.rendered_html :visited {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-.rendered_html h1:first-child {
-  margin-top: 0.538em;
-}
-.rendered_html h2:first-child {
-  margin-top: 0.636em;
-}
-.rendered_html h3:first-child {
-  margin-top: 0.777em;
-}
-.rendered_html h4:first-child {
-  margin-top: 1em;
-}
-.rendered_html h5:first-child {
-  margin-top: 1em;
-}
-.rendered_html h6:first-child {
-  margin-top: 1em;
-}
-
-
-
-
-
-
-
-
-.rendered_html * + ul {
-  margin-top: 1em;
-}
-.rendered_html * + ol {
-  margin-top: 1em;
-}
-
-
-.rendered_html pre,
-
-
-
-.rendered_html tr,
-.rendered_html th,
-
-.rendered_html td,
-
-
-.rendered_html * + table {
-  margin-top: 1em;
-}
-
-.rendered_html * + p {
-  margin-top: 1em;
-}
-
-.rendered_html * + img {
-  margin-top: 1em;
-}
-.rendered_html img,
-
-.rendered_html img.unconfined,
-
-div.text_cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.text_cell > div.prompt {
-    display: none;
-  }
-}
-div.text_cell_render {
-  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
-  outline: none;
-  resize: none;
-  width: inherit;
-  border-style: none;
-  padding: 0.5em 0.5em 0.5em 0.4em;
-  color: #000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-a.anchor-link:link {
-  text-decoration: none;
-  padding: 0px 20px;
-  visibility: hidden;
-}
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-  visibility: visible;
-}
-.text_cell.rendered .input_area {
-  display: none;
-}
-.text_cell.rendered 
-.text_cell.unrendered .text_cell_render {
-  display: none;
-}
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6 {
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.cm-header-1 {
-  font-size: 185.7%;
-}
-.cm-header-2 {
-  font-size: 157.1%;
-}
-.cm-header-3 {
-  font-size: 128.6%;
-}
-.cm-header-4 {
-  font-size: 110%;
-}
-.cm-header-5 {
-  font-size: 100%;
-  font-style: italic;
-}
-.cm-header-6 {
-  font-size: 100%;
-  font-style: italic;
-}
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="/">CONTRASUBERNA</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+        
+        
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<a href="/third-post.html">
+		<h2 itemprop="name headline">Language knowledge and place of birth as predictors of independence support in Catalonia</h2>
+	</a>
+	<time datetime="2018-07-16T13:00:00+02:00" itemprop="datePublished">Mon 16 July 2018</time>
+	&nbsp;—&nbsp;
+	<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<span itemprop="name">Paolo Gervasoni</span>
+	</span>
+	<div class="summary"><p>Prediction and causes of independence support in Catalonia</p></div>
+	Category:
+	<span itemprop="articleSection">
+		<a href="/category/posts.html" rel="category">posts</a>
+	</span>
+	Tags:
+ 
+	<span itemprop="keywords">
+		<a href="/tag/python.html" rel="tag">Python</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/pandas.html" rel="tag">Pandas</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/catalonia.html" rel="tag">Catalonia</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/prediction.html" rel="tag">Prediction</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/independence.html" rel="tag">Independence</a>
+	</span>
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>In this post we will explore the linguistic behavior of Barcelona residents that are also active on Twitter. Barcelona is officially a bilingual city where Catalan and Spanish have been regularly heard on its streets since at least the end of the <a href="http://blogs.sapiens.cat/socialsenxarxa/2012/06/29/catala-i-castella-a-la-catalunya-moderna/">16th century</a>. Whereas the Catalan language developed as a local dialect from Latin, Spanish was initially imported through political and cultural influence, later through several periods of repression against Catalan from central authorities  and more recently due to massive immigration from Spanish regions in the 20th century. However, when we claim that a city is bilingual, more often than not we are not conveying the effective linguistic reality of that city: individual bilingualism is rarely perfect, many residents may still be monolinguals, and one of the two languages may clearly dominate the other in everyday life. It is a matter of constant political debate whether Catalan ( a local language still <a href="https://en.wikipedia.org/wiki/Catalan_language">spoken by a few millions</a> ) will be able to coexist with Spanish ( a global language spoken by hundred of millions ) , and for how long. The purpose of this post is to quantify the degree of use of each language in spontaneous, informal written communication. In order to accomplish this task, we focused on the activity of Twitter users that are also residents in the city of Barcelona. Even though <a href="https://www.idescat.cat/dades/eulp/?lang=en">language surveys</a> to quantify the linguistic reality are regularly carried out in Catalonia, they suffer from the limitation of having to rely on the reporting from sampled people ( and humans are notoriously biased when <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases#Social_biases">reporting statistics on their own activity</a> ). Instead, we believe that analyzing randomly sampled linguistic data from Twitter should allow for much less unbiased estimates. Unfortunately, the current study will only provide a picture of the current linguistic reality: since Twitter is a very recent social networking service, in order to identify trends the same study should be carried out once every few years.</p>
+<hr>
+        
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<a href="/second-post.html">
+		<h2 itemprop="name headline">Exploring language choice in Kiev through Twitter</h2>
+	</a>
+	<time datetime="2018-07-11T11:00:00+02:00" itemprop="datePublished">Wed 11 July 2018</time>
+	&nbsp;—&nbsp;
+	<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<span itemprop="name">Paolo Gervasoni</span>
+	</span>
+	<div class="summary"><p>Quantifying language preference through Twitter in Kiev</p></div>
+	Category:
+	<span itemprop="articleSection">
+		<a href="/category/posts.html" rel="category">posts</a>
+	</span>
+	Tags:
+ 
+	<span itemprop="keywords">
+		<a href="/tag/python.html" rel="tag">python</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/bilingualism.html" rel="tag">bilingualism</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/kiev.html" rel="tag">Kiev</a>
+	</span>
 </div>
+<hr>
+        
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<a href="/first-post.html">
+		<h2 itemprop="name headline">Exploring language choice in Barcelona with Twitter and Python</h2>
+	</a>
+	<time datetime="2018-06-25T13:00:00+02:00" itemprop="datePublished">Mon 25 June 2018</time>
+	&nbsp;—&nbsp;
+	<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<span itemprop="name">Paolo Gervasoni</span>
+	</span>
+	<div class="summary"><p>Quantifying language preference through Twitter in Barcelona</p></div>
+	Category:
+	<span itemprop="articleSection">
+		<a href="/category/posts.html" rel="category">posts</a>
+	</span>
+	Tags:
+ 
+	<span itemprop="keywords">
+		<a href="/tag/python.html" rel="tag">python</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/bilingualism.html" rel="tag">bilingualism</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="/tag/barcelona.html" rel="tag">Barcelona</a>
+	</span>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Identification-of-sources-of-bias-in-Twitter-random-samples">Identification of sources of bias in Twitter random samples<a class="anchor-link" href="#Identification-of-sources-of-bias-in-Twitter-random-samples">¶</a></h2><p>The first step in a language survey is to ensure unbiased sampling and, in case bias cannot be avoided, at least describe and quantify it. Since we will be sampling from Twitter users only, it is clear that our sample will not be entirely random. It is therefore important to reason whether this may introduce bias in favor of one of the two languages. We identify three main relevant bias inherent to Twitter-based samples:</p>
+<hr>
+ <div class="pagination">
 <ul>
-<li><p><strong>Age bias</strong>: Assuming Twitter demographics do not vary too much across the globe, a few conclusions from <a href="https://www.statista.com/statistics/192703/age-distribution-of-users-on-twitter-in-the-united-states/">available statistics on Twitter users in the US</a> when compared to <a href="https://en.wikipedia.org/wiki/Demography_of_the_United_States">US demographic data</a> are apparent:</p>
-<ul>
-<li>Speakers younger than 15 will not be represented </li>
-<li>Speakers older than 65 will be underrepresented</li>
-<li>Speakers between 18 and 30 will be overrepresented</li>
-</ul>
-<p>In order to understand how this bias can affect our conclusions, we need to consider that the vast majority of the population of Barcelona educated under the dictatorship of General Franco from 1939 to 1975 will not feel at ease when having to write in Catalan even in the case that Catalan happened to be their mother tongue. The language was completely banned from the regular school system until 1978, when a new Constitution was adopted. Therefore, only people younger than 40 will have had the chance of learning to write in Catalan at school. In a way, the fact that people younger than 40 are overrepresented in the sample is balanced by the fact that these people are indeed those having the least bias when it comes to decide in which language to communicate. The main conclusion is that our sample, for the very fact of being a sample drawn from Twitter users only, will have a bias in favor of Catalan as compared to the linguistic reality of Barcelona's population older than 18.</p>
-</li>
-<li><p><strong>Education bias:</strong> <a href="https://blog.hootsuite.com/twitter-statistics/">Twitter users are more likely to be in college or to have a college degree</a> than if they were randomly sampled from population. Since in Barcelona Catalan is more spoken among people of educated classes than from less educated backgrounds, the educational bias will result in an overrepresentation of Catalan speakers with respect to a random sample of inhabitants.</p>
-</li>
-<li><p><strong>Income bias:</strong> This bias , correlated with the previous one, results from the fact that <a href="https://blog.hootsuite.com/twitter-statistics/">Twitter users are likely to have above-average income</a>. Since Catalan is much less spoken among low income inhabitants than among middle income ones, again many people that prefer to communicate mostly in Spanish will not be adequately represented in our samples. We expect the income bias from Twitter samples to overrepresent Barcelona inhabitants that speak and write fluent Catalan.</p>
-</li>
-</ul>
-<p>Because of all the listed bias, the conclusions of this study will not apply to the population of Barcelona as a whole, but rather to that part of the population between 18 and 50, with higher-than-average income and educational levels.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h2><p>10 Twitter accounts that we deem representative of the cultural spectrum of the city of Barcelona are selected. The criteria used for the selection are the following:</p>
-<ul>
-<li>Accounts must be relevant ( hundreds of thousands of followers )</li>
-<li>Accounts must be related to the city of Barcelona as much as possible</li>
-<li>At least half of the accounts must be as <em>politically</em> neutral as possible</li>
-<li>Accounts must cover the cultural spectrum of the city: they must range from a strong commitment towards the minority language to a very weak one, if any</li>
-<li>Selection must include accounts written in each of the two languages at study</li>
-</ul>
-<p>The following are the selected root accounts ( in parenthesis the name and language of the account ):</p>
-<ul>
-<li><strong>ARA</strong> (@diariARA, CAT) : the most widely distributed newspaper in Catalan language. Moderate nationalistic views</li>
-<li><strong>BCN_Ajuntament</strong> (@bcn_ajuntament, CAT) : the official Twitter account of Barcelona's City Council.</li>
-<li><strong>Hola</strong> (@hola, SPA) : weekly magazine specialising in celebrity news. Currently published in Madrid but founded during the dictatorship in Barcelona in 1944. In Spanish only.</li>
-<li><strong>El Periódico</strong> (@elperiodico, SPA) : the second newspaper by sales in Catalonia, edited in both Spanish and Catalan (automated translation). Twitter account is only in Spanish. </li>
-<li><strong>La Vanguardia</strong> (@LaVanguardia, SPA) : the most widely circulated newspaper in Catalonia. Available in both Spanish and Catalan (automated translation), but official Twitter account is only in Spanish. </li>
-<li><strong>Mossos</strong> (@mossos, mostly CAT) : the official Twitter account of the Catalan regional police</li>
-<li><strong>Meteocat</strong> (@meteocat, CAT) : the official Twitter account of the Meteorological Service of Catalonia</li>
-<li><strong>Sport</strong> (@sport, SPA) : one of two main sports newspaper published in Barcelona, published in Spanish only</li>
-<li><strong>TMB_Barcelona</strong> (@TMB_Barcelona, CAT) : the official Twitter account of Barcelona public transport service</li>
-<li><strong>Vilaweb</strong> (@VilaWeb, CAT) : an online newspaper with a strong focus on Catalan culture and language</li>
-</ul>
-<p>Of these accounts, we consider <strong>@meteocat, @TMB_Barcelona, @bcn_ajuntament, @sport</strong> and <strong>@hola</strong> to be politically neutral. Political neutrality does not imply cultural neutrality.</p>
-<p>In order to quantify the aggregate linguistic behavior of the followers of each account, 
-we first need to characterize the linguistic choice of each follower. The interesting information will be the distribution resulting from all the sampled linguistic choices. The process to identify the distribution of the linguistic choice among the followers of a given root-account is the following ( code details can be checked on GitHub repo <a href="https://github.com/pgervila/Explore_bilingualism_in_cities">here</a> ).</p>
-<ol>
-<li><p>Select a root account</p>
-</li>
-<li><p>For the selected account, obtain a random sample of <em>at least</em> 100 city-resident followers with a sufficient number of (re)tweets and followers. It is important to ensure that the sample is indeed as random as possible. Since in the process of selecting tweets from users we will be forced to apply several filters in order to ensure quality of the data, it is important to discuss the potential sources of bias one by one.</p>
-<ul>
-<li>Selected root-account followers must have the location activated in order to identify them as city residents. Unfortunately, the proportion of Twitter users that activate the geolocation field is very low ( approximately 10% ) : this makes the retrieval process quite costly, since the Twitter API currently does not allow to stream more than 3000 followers every 15 minutes. We assume no linguistic bias is associated with the activation of the geolocation.</li>
-<li>A limitation of Twitter API is that followers data can only be streamed in chronological form, from most recent to oldest, thus potentially introducing another source of bias. However, it was verified that the process of selecting the most recent followers is approximately equivalent to taking a random sample of the entire list of followers ( time does not introduce significant bias ). This makes the process of retrieving relevant followers much less expensive than taking a proper random sample after having downloaded the entirety of followers</li>
-<li>It is assumed that filtering accounts by a minimum number of followers and (re)tweets does not introduce any significant source of bias in linguistic terms</li>
-<li>Selected users need to have twitted or retweeted at least 60 times ( a compromise between statistical significance and computational cost). </li>
-<li>In addition, in order to avoid dummy or irrelevant accounts as much as possible, users need to have a minimum number of followers ( >= 50 ).</li>
-</ul>
-</li>
-<li><p>Stream the 60 most recent Tweets posted by each relevant follower. This will include tweets, retweets and replies to other tweets.</p>
-</li>
-<li><p>Detect how many of these tweets can be linguistically identified. Linguistic identification is implemented by comparing results from the Twitter algorithm to those from <a href="https://pypi.org/project/langdetect/">langdetect</a>, a Python library for text language detection. Only tweets for which both language detection algorithms provide the same result are kept. Discard tweets for which language cannot be reliably identified because of discording output between language detection algos.</p>
-</li>
-<li><p>Select only tweets written in local languages plus English</p>
-</li>
-<li><p>Filter followers further by considering only those with at least 40 filtered tweets ( a compromise between statistical significance and computational feasability), and drop all followers with less than 40 remaining tweets. In order to have an even weight from all followers, keep only 40 tweets for each follower.</p>
-</li>
-<li><p>Each tweet from a given user is considered as a random bernoulli variable (with identical expectation). Therefore each list of tweets per follower of size n = 40 is a sample from a binomial distribution, in which <em>success</em> is a tweet written in a particular language $ L $ and <em>failure</em> any tweet written in another language. For each relevant follower $ i $ and each applicable language, compute the sample mean $\bar Y_{i,L}$ ( an estimate of the success probability $p_{i,L}$). We will call these sample mean the follower's linguistic mean. Each follower will have as many linguistic means as languages are taken into consideration</p>
-</li>
-<li><p>For each language, consider the distribution resulting from all the linguistic means from each follower. Since we only have a random sample of linguistic means, we will have a sample of the desired distribution</p>
-</li>
-<li><p>Repeat for all root accounts</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Population-samples-per-account">Population samples per account<a class="anchor-link" href="#Population-samples-per-account">¶</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Twitter-language-settings-per-root-accounts">Twitter language settings per root accounts<a class="anchor-link" href="#Twitter-language-settings-per-root-accounts">¶</a></h2><p>A first indication of the relative language relevance is provided by the language setting of the account of each follower. In most cases, the default language ( worked out by algos based on computer settings and installations ) will be accepted by the user unless he or she strongly prefers another alternative language. Therefore, in this case there is a strong bias towards the dominant official language: Spanish is still the default language for virtually all commercial computers or smartphones sold in Barcelona. Nevertheless, it is possible ( and simple ) to change the settings of a Twitter account to Catalan language.</p>
-<p><img height="400" src="figures/lang_settings_in_Barcelona.png" width="600" /></p>
-<p>Results show that Spanish is by far the default language for most users from all accounts, with a peak of more than 80% for <strong>@hola</strong> followers and a minimum of almost 60% for <strong>@VilaWeb</strong> followers. Even in the case of <strong>@Vilaweb</strong>, only 3 users out of 10 on average have their language settings in Catalan. In some cases, we assume users are not even aware they can switch the setting. It's the language inertia so common in diglossic environments, where it is assumed that some activities or services are provided in one language only.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Percentage-of-tweets-in-each-language">Percentage of tweets in each language<a class="anchor-link" href="#Percentage-of-tweets-in-each-language">¶</a></h2><p>In order to have an idea of the relative weight of each language per account, since every follower will contribute with the same amount of tweets to the final sample per account, we can compute the percentage of tweets in each language per account by considering all tweets from the account followers and computing the ratio in each language.</p>
-<p><img height="400" src="figures/percentage_of_each_lang_per_account_in_Barcelona.png" width="600" /></p>
-<p>We observe that there is a higher proportion of tweets in Catalan as compared to the percentage of lang settings in Catalan. The conclusion is that some users that regularly tweet also in Catalan have their settings in Spanish ( a default option they feel comfortable enough with). One of the most telling results from this graph is that the majority of (re)tweets from followers of <strong>@VilaWeb</strong> (widely considered a Catalan nationalist publication) are in Spanish.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Language-choice-distribution-of-followers-per-account">Language choice distribution of followers per account<a class="anchor-link" href="#Language-choice-distribution-of-followers-per-account">¶</a></h2><p>Language percentages give us a general idea of language preference, but we have not explored yet how this preference is distributed among users. Do most followers (re)tweet in both languages for all accounts? What proportion of users tweet in only or mostly one language for each account?</p>
-<p>Since we have 40 classified tweets per selected follower, we can compute the ratio of tweets in each language per follower. After sorting all user ratios per language and per account, we can visualize box plots of the data. <a href="https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots">Box plots</a> are a great way to quickly visualize distributions. In a box plot, data is divided into 4 groups by its 3 quartiles. Each box contains 50% of the data as determined by the first and the third quartiles, and is divided in two parts by the <em>median</em> of the sorted data (the middle point from lower to higher value, and also its second quartile). The interval defined by the upper and lower wiskers contains almost all of the data, except for those values that are considered statistical outliers. We plot two box plots per account: one for Catalan ratios, another for Spanish ones ( English is not considered here ).</p>
-<p><img height="400" src="figures/lang_distribs_per_acc_in_Barcelona.png" width="600" /></p>
-<p>The first thing we should point out is how the median values (black line inside boxes) are mostly far away from a balanced result ( 0.5 ) for most accounts, but especially for those that tweet in Spanish ( the leftmost four ). For these accounts, the distributions are very skewed, showing a relatively large number of users that tweet only or almost only in Spanish. Only in the case of <strong>@VilaWeb</strong> followers, a more even distribution for both languages is found. As a consequence, while the median follower of <strong>@hola</strong> does not tweet in Catalan at all, and that of <strong>@sport</strong> only 5% of the times, the median follower of <strong>@VilaWeb</strong> tweets almost 40% of the times in Catalan. It is interesting to notice that while users that tweet only or almost only in Catalan are non existent or considered outliers for the accounts that tweet in Spanish, users that tweet only or almost only in Spanish are not outliers for any of the accounts under consideration. In any case, all median followers (re)tweet more often in Spanish than in Catalan. In addition, they do so by very consistent margins, since all median followers (re)tweet more than half of the times in Spanish, even in the case of <strong>@VilaWeb</strong>.</p>
-<p>In the case of each of the four accounts whose tweets are in Spanish, 75% of their followers write more than 50% of their tweets in Spanish. On the other hand, for these very accounts, 75% of their followers write less than 30% of their tweets in Catalan.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linguistic-choice-of-public-transport-users">Linguistic choice of public transport users<a class="anchor-link" href="#Linguistic-choice-of-public-transport-users">¶</a></h2><p>The <strong>@TMB_Barcelona</strong> account is probably the most informative of all accounts from a linguistic viewpoint. Even though the account tweets in Catalan, public transport is tipically one of the few places in a city where large amounts of people from different backgrounds and places come together. Since we expect its followers to be, if certainly not a random one, at least a representative sample of its users, this account should provide a good linguistic summary of the city.</p>
-<p><img height="400" src="figures/hist_lang_choice_@TMB_Barcelona_followers.png" width="600" /></p>
-<p>From the Spanish language perspective, the interval with the highest frequency is that with more than 95% of tweets written in Spanish. From the Catalan perspective, the interval with the highest frequency is that with less than 5% of tweets written in Catalan ( with a frequency 3 times higher than that of the second higher frequency interval - the adjacent one ). 
-The cumulative histogram shows how approximately half of the followers write less than 10% of their tweets in Catalan, and less than 20% of followers write the majority of their tweets in Catalan. The cumulative curve for Spanish shows that half of the followers write more than 70% of their content in Spanish, and 70% of followers tweet mostly in Spanish</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h2><p>A sample of accounts mostly written in Catalan reveals a clear preference for Spanish in the tweets written by their Barcelona-resident followers. Barcelona is officially a bilingual city, but, at least among its Twitter users, this bilingualism is strongly asymmetrical : Spanish is consistently the most frequently used language, either out of preference, inertia or maximization of interaction. Since the chosen sample is likely to have a small bias in favor of Catalan as compared to the linguistic reality of the city, the most relevant conclusion from the evidence gathered through tweets is that there is a significant part of society that makes marginal use, if any at all, of the Catalan language. From a sociolinguistic viewpoint, this strong imbalance in the frequency of use may have important effects on the quality and creativity of the minority language in the long term, and eventually on its survival.
-An important conclusion is that a linguistically balanced environment is only provided by accounts that on paper are skewed (because of the language they are written in) towards the minority language, whereas accounts that tweet in Spanish, the dominant language, feature a group of followers that linguistically are very unbalanced . This is evidence that if the goal is to achieve a truly bilingual society, with a minimum of inequalities in language use and preference, policies must be skewed towards the minority language. In any case, it will be interesting to repeat the same analysis 10 years from now in order to detect potential trends.</p>
-</div>
-</div>
-</div>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['$','$'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        " linebreaks: { automatic: true, width: '95% container' }, " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
-<p>There are <a href="https://pgervila.github.io/first-post.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://pgervila.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    <li class="active"><a href="/index.html">1</a></li>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+</ul>
+</div> 		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="">CONTRASUBERNA</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="#">You can add links in your config file</a></li>
+							<li><a href="#">Another social link</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="/category/posts.html">posts (3)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://getpelican.com/">Pelican</a></li>
+							<li><a href="http://python.org/">Python.org</a></li>
+							<li><a href="https://twitter.com/">Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Paolo Gervasoni 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    var disqus_shortname = 'pgervila.github.io';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
 </script>
 </body>
 </html>
