@@ -1041,14 +1041,6 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-preprocessing">Data preprocessing<a class="anchor-link" href="#Data-preprocessing">¶</a></h2><p>Electoral data at municipal level could be easily downloaded from the Catalan Government site in CSV format. We focused on data from the regional elections held on the 27th of September 2015, where pro and anti independence blocks, except for one party, were clearly identifiable. A more recent election took place on the 21st of December 2017, with a higher turnout but with very similar percentages in terms of independence support. Ont he other hand, sociological data such as place of birth, level of studies or income level had to be scraped from IDESCAT (the scraping script is available on this GutHub repo). Data was from exactly the same year of the electoral contest. Once both datasets were available, data had to be merged using unique municipality codes. Data was saved in a .csv file hat can be easily imported into a pandas dataframe.</p>
 </div>
 </div>
@@ -1057,13 +1049,14 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exploratory-data-analysis">Exploratory data analysis<a class="anchor-link" href="#Exploratory-data-analysis">¶</a></h2><p>Catalonia currently has 947 municipalities, the vast majority of which are small villages of a few hundred inhabitants. We had to drop data for Talarn municipality, because some of it was clearly wrong.</p>
+<h2 id="Exploratory-data-analysis">Exploratory data analysis<a class="anchor-link" href="#Exploratory-data-analysis">¶</a></h2><p>Catalonia currently has 947 municipalities, the vast majority of which are small villages of a few hundred inhabitants. We had to drop data for Talarn municipality (700 inhabitants), because some of it was clearly wrong.</p>
+<p>We start by importing the necessary libraries for data analysis as well as the downloaded data:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1089,7 +1082,7 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 <li>Educational level</li>
 <li>Language knowledge</li>
 </ul>
-<p>In order to do this, we select the appropriate columns from the dataframe</p>
+<p>In order to do this, we select the appropriate columns from the dataframe:</p>
 </div>
 </div>
 </div>
@@ -1116,8 +1109,8 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 <li><strong>pct_cat_speakers</strong> is the percentage of the population of the municiaplity able to communicate in Catalan language.</li>
 </ol>
 <p>Unemployment data ( measured at the end of the year, in winter) was discarded because of the high seasonality it showed in many villages, making it a highly unreliable indicator.</p>
-<p>Our dependent variable will be <strong>'Independ_pct'</strong>, the percentage of the population in each municipality that voted for inequivocally pro-independence parties in the elections of 27th of September 2015. The parties were actually two : JuntsxSi ( a coalition of the two main Catalan nationalist parties) and CUP, a far left party that scored higher than ever in the considered election.</p>
-<p>pandas has a handy method 'describe' that summarizes the basic statistics of each column of the dataframe:</p>
+<p>Our dependent variable will be <strong>'Independ_pct'</strong>, the percentage of the population in each municipality that voted for inequivocally pro-independence parties in the elections of 27th of September 2015. The parties were actually two : <em>JuntsxSí</em> ( a coalition of the two main Catalan nationalist parties) and <em>CUP</em>, a far left party that scored higher than ever in the considered election.</p>
+<p>Pandas has a handy method called <em>describe</em> that summarizes the basic statistics of each column of the dataframe:</p>
 </div>
 </div>
 </div>
@@ -1291,7 +1284,6 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">DF_ALL_MUNIC_DATA</span><span class="p">[</span><span class="n">attributes</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 <span class="n">corr_matrix</span><span class="p">[</span><span class="s1">'Independ_pct'</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1">#corr_matrix['Independ_pct'].sort_values()[:-1]</span>
 </pre></div>
 </div>
 </div>
@@ -1368,8 +1360,8 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Clearly, the strongest correlations of independence support are with places of birth and language knowledge. We will see later tha place of birth and language knowledge are highly correlated, and thus they can be considered as a single predictor. The correlation with place of birth is particularly high when people are born in other Spanish regions outside Catalonia (a very strong negative correlation of 85%). Notice that the correlation of independence support with people born in Catalonia is also quite strong (69%), but not as strong as in the case of Spanish regions.</p>
-<p>We believe that the percentage of Spanish-born people outside Catalonia is actually a very good proxy for the degree of intensity of Spanish cultural origins among the population of the municipality. The variable <strong>'pct_spa'</strong> measures the immigration level from other Spanish regions, but it does not tell whether this immigration is recent or rather from a few decades ago. However, we know that during the second half of the XXth century there was a massive <a href="https://ca.wikipedia.org/wiki/Demografia_de_Catalunya">immigration wave</a> that concentrated in the urban areas around Barcelona and Tarragona (total population grew from 3.2 milions in 1950 to 5.1 milions in 1970). In more recent years, even though in general new immigrants continue to settle in the very same aereas as that of the immigration wave of the past century, the migration pressure from other Spanish regions has significantly eased. Since a significant percentage of the immigrants of the past century are no longer alive, it seems reasonable to conclude that the higher the <strong>'pct_spa'</strong> value, the more likely it is that Catalan-born people from the municipality have recent Spanish roots in their family: they are the offspring of the migrants of the 50-70s. That is to say, the percentage of people with Spanish origins is always higher than the value expressed by <strong>'pct_spa'</strong> because this indicator tends to be high in places were immigration from Spanish regions was high during the 20th century. It comes as no surprise that the lowest support for independence occurs in Badia del Vallès, a town that was founded as a residential area during the Franco dictatorship with the main purpose of hosting the growing migration flows. Badia del Vallès is indeed the municipality with the highest percentage of people born in other Spanish regions (more than 30%).</p>
-<p>On the contrary, a high level of <strong>'pct_cat'</strong> tends to indicate that most people have Catalan roots, but it masks the fact that a percentage of the people born in Catalonia will have non Catalan origins because of the high immigration levels in the second half of the XX century. Therefore, the percentage of people with Catalan roots is always lower than the percentage expressed by <strong>'pct_cat'</strong>.</p>
+<p>We believe that the percentage of Spanish-born people outside Catalonia is actually a very good proxy for the degree of intensity of Spanish cultural origins among the population of the municipality. The variable <strong>'pct_spa'</strong> measures the immigration level from other Spanish regions, but it does not tell whether this immigration is recent or rather from a few decades ago. However, we know that during the second half of the XXth century there was a massive <a href="https://ca.wikipedia.org/wiki/Demografia_de_Catalunya">immigration wave</a> that concentrated in the urban areas around Barcelona and Tarragona (total population grew from 3.2 milions in 1950 to 5.1 milions in 1970). In more recent years, even though in general new immigrants continue to settle in the very same areas as that of the immigration wave of the past century, the migration pressure from other Spanish regions has significantly eased. Since a significant percentage of the immigrants of the past century are no longer alive, it seems reasonable to conclude that the higher the <strong>'pct_spa'</strong> value, the more likely it is that Catalan-born people from the municipality have recent Spanish roots in their family: they are the offspring of the migrants of the 50-70s. That is to say, the percentage of people with Spanish origins is always higher than the value expressed by <strong>'pct_spa'</strong> because this indicator tends to be high in places were immigration from Spanish regions was high during the 20th century. It comes as no surprise that the lowest support for independence occurs in Badia del Vallès, a town that was founded as a residential area during the Franco dictatorship with the main purpose of hosting the growing migration flows. Badia del Vallès is indeed the municipality with the highest percentage of people born in other Spanish regions (more than 30%).</p>
+<p>On the contrary, a high level of <strong>'pct_cat'</strong> tends to indicate that most people have Catalan roots, but it masks the fact that a percentage of the people born in Catalonia has non Catalan origins because of the high immigration levels in the second half of the XX century. Therefore, the percentage of people with Catalan roots is always lower than the percentage expressed by <strong>'pct_cat'</strong>.</p>
 </div>
 </div>
 </div>
@@ -1386,7 +1378,7 @@ $$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$<p></p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since the correlation coefficient only measures linear relationships 
-and it may completely miss out on nonlinear ones, in order to explore potential non linearities, it is always useful to actually visualize the relations between variables.</p>
+and it may completely miss out on nonlinear ones, in order to explore potential non linearities, it is always safer to actually visualize the relations between variables.</p>
 </div>
 </div>
 </div>
@@ -37743,7 +37735,8 @@ U4iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIyIzy/wWl2PPsfnCyAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [82]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">"Independ_pct ~ pct_spa + RFDB_idx + pct_Univ + Tot  "</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">DF_ALL_MUNIC_DATA</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">"Independ_pct ~ pct_spa + RFDB_idx + pct_Univ + Tot  "</span><span class="p">,</span> 
+                  <span class="n">data</span> <span class="o">=</span> <span class="n">DF_ALL_MUNIC_DATA</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">results</span><span class="o">.</span><span class="n">summary2</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -37820,7 +37813,7 @@ U4iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIyIzy/wWl2PPsfnCyAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="$$-Independ\_pct-=-\beta_0-+-\beta_1-Pct\_spa-+-\beta_2-RFDB\_idx-+-\beta_3-Pct\_Univ-+-\beta_4-Tot-$$">$$ Independ\_pct = \beta_0 + \beta_1 Pct\_spa + \beta_2 RFDB\_idx + \beta_3 Pct\_Univ + \beta_4 Tot $$<a class="anchor-link" href="#$$-Independ\_pct-=-\beta_0-+-\beta_1-Pct\_spa-+-\beta_2-RFDB\_idx-+-\beta_3-Pct\_Univ-+-\beta_4-Tot-$$">¶</a></h3>
+<h3 id="$$-Independ_{pct}-=-\beta_0-+-\beta_1-Spa_{pct}-+-\beta_2-RFDB\_idx-+-\beta_3-Univ_{pct}-+-\beta_4-Tot-$$">$$ Independ_{pct} = \beta_0 + \beta_1 Spa_{pct} + \beta_2 RFDB\_idx + \beta_3 Univ_{pct} + \beta_4 Tot $$<a class="anchor-link" href="#$$-Independ_{pct}-=-\beta_0-+-\beta_1-Spa_{pct}-+-\beta_2-RFDB\_idx-+-\beta_3-Univ_{pct}-+-\beta_4-Tot-$$">¶</a></h3>
 </div>
 </div>
 </div>
